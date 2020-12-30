@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Approval Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='app.js') }}"></script>
+	<link rel="stylesheet"  href= "{{ url_for('static',filename='app.css') }}">
+</head>
+<body>
+<div class="img"></div>
+<form class="form">
+	<h2>Gender (0-Male, 1- Female)</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-gender-0" name="uiGender" value="0"/>
+		<label for="radio-gender-0">0</label>
+        <input type="radio" id="radio-gender-1" name="uiGender" value="1"/>
+		<label for="radio-gender-1">1</label>
+    </div>
+    </form>
+<form class="form">
+    <h2>Married (0-No, 1-Yes)</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-married-0" name="uiMarried" value="0"/>
+		<label for="radio-married-0">0</label>
+        <input type="radio" id="radio-married-1" name="uiMarried" value="1"/>
+		<label for="radio-Married-1">1</label>
+    </div>
+</form>
+<form class="form">
+    <h2>Dependents</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-dependents-0" name="uiDependents" value="0"/>
+		<label for="radio-dependents-0">0</label>
+        <input type="radio" id="radio-dependents-1" name="uiDependents" value="1"/>
+		<label for="radio-dependents-1">1</label>
+        <input type="radio" id="radio-dependents-2" name="uiDependents" value="2"/>
+		<label for="radio-dependents-2">2</label>
+        <input type="radio" id="radio-dependents-3" name="uiDependents" value="3"/>
+		<label for="radio-dependents-3">3</label>
+        <input type="radio" id="radio-dependents-4" name="uiDependents" value="4"/>
+		<label for="radio-dependents-4">4</label>
+    </div>
+</form>
+<form class="form">
+    <h2>Education (0-Not graduate, 1-Graduate)</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-education-0" name="uiEducation" value="0"/>
+		<label for="radio-education-0">0</label>
+        <input type="radio" id="radio-education-1" name="uiEducation" value="1"/>
+		<label for="radio-education-1">1</label>
+    </div>
+</form>
+<form class="form">
+    <h2>Self_Employed (0-No, 1-Yes)</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-self_employed-0" name="uiSelf_Employed" value="0"/>
+		<label for="radio-self_employed-0">0</label>
+        <input type="radio" id="radio-self_employed-1" name="uiSelf_Employed" value="1"/>
+		<label for="radio-self_employed-1">1</label>
+    </div>
+</form>
+    <h2>Applicant_Income</h2>
+<input class="floatLabel" id="uiApplicant_Income" name="Applicant_Income" type="email"
+       value="8000">
+
+    <h2>Coapplicant_Income</h2>
+<input class="floatLabel" id="uiCoapplicant_Income" name="Coapplicant_Income" type="email"
+       value="0">
+
+    <h2>Loan_Amount</h2>
+<input class="floatLabel" id="uiLoan_Amount" name="Loan_Amount" type="email" value="150.0">
+
+    <h2>Loan_Amount_Term</h2>
+<div>
+    <select class="loan_amount_term" name="" id="uiLoan_Amount_Term">
+     <option value="" disabled="disabled" selected="selected">Choose Loan_Amount_Term</option>
+      <option>12.0</option>
+        <option>36.0</option>
+        <option>60.0</option>
+        <option>84.0</option>
+        <option>120.0</option>
+        <option>180.0</option>
+        <option>240.0</option>
+        <option>300.0</option>
+        <option>360.0</option>
+        <option>480.0</option>
+  </select>
+</div>
+    <h2>Credit_History</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-credit_history-1" name="uiCredit_History" value="1.0"/>
+		<label for="radio-credit_history-1">1.0</label>
+        <input type="radio" id="radio-credit_history-2" name="uiCredit_History" value="0.0"/>
+		<label for="radio-credit_history-2">0.0</label>
+    </div>
+
+    <h2>Property_Area</h2>
+	<div>
+  <select class="property_area" name="" id="uiProperty_Area">
+    <option value="" disabled="disabled" selected="selected">Choose Property Area</option>
+		<option>Rural</option>
+        <option>Semi-Urban</option>
+        <option>Urban</option>
+  </select>
+</div>
+	<button class="submit" onclick="onClickedLoanApproval()" type="button">Loan Approval Status</button>
+	<div id="uiLoanApprovalStatus" class="result">	<h2></h2> </div>
+</body>
+</html>
